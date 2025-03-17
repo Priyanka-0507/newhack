@@ -1,0 +1,10 @@
+const express=require('express');
+const {createtask,deletetask,gettask,updatetask} =require('../controllers/taskcntrl');
+const authmiddleware=require('../middleware/authmiddleware');
+const router=express.Router();
+router.use(authmiddleware);
+router.post('/',createtask);
+router.get('/',gettask);
+router.put('/:id',updatetask);
+router.delete('/:id',deletetask);
+module.exports=router;

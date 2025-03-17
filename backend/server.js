@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authroutes = require('./routes/authroutes');
 const jrnalroutes = require('./routes/jrnalroutes');
+const taskroutes=require('./routes/taskroutes');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/api/auth', authroutes);
 app.use('/api/journal', jrnalroutes);
+app.use('/api/task',taskroutes);
 
 // Basic route for testing
 app.get('/', (req, res) => {

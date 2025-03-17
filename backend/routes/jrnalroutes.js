@@ -6,5 +6,5 @@ router.use(authmiddleware);
 router.post('/',createentry);
 router.post('/',getentry);
 router.put('/:id',updateentry);
-router.delete('./:id',deleteentry);
+router.delete('/:id',deleteentry);
 module.exports=router;
